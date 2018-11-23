@@ -48,7 +48,7 @@ return products which were very popular... 4 years ago. Try to find solution for
 ## Techinical overview:
  - The application is spring-boot microservice, 1.5.2.RELEASE version. 
  - Java 8 is used for development
- - Technologies: Spring, JPA, JMS, Quartz, AOP, Maven, Docker
+ - Technologies: Spring, JPA, JMS, Quartz, AOP, Jersey(Javax-Ws)Maven, Docker
  - Postgres database
  <br /><br />
 

@@ -1,0 +1,44 @@
+server:
+    context-path: /recommendation-app
+    servlet-path: /system
+    port: 6789
+    compression:
+        enabled: true
+spring:
+    main:
+        banner-mode: "off"  
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://localhost/recommendation
+        username: test
+        password: test
+        tomcat:
+            initialSize: 5
+            minIdle: 10
+            maxActive: 30
+            maxWait: 2000
+            validationQuery: "/* Health Check */ SELECT 1"
+            validationQueryTimeout: 3
+            testWhileIdle: true
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        database: POSTGRESQL
+        openInView: false
+        show_sql: false
+        generate-ddl: false
+        hibernate:
+            ddl-auto: none
+        properties:
+            hibernate.generate_statistics: false
+            hibernate.temp.use_jdbc_metadata_defaults: false
+logging:
+    config: classpath:log4j.properties
+endpoints:
+    shutdown:
+        sensitive: false
+        enabled: true
+    restart:
+        enabled: true
+management:
+    security:
+        enabled: false
